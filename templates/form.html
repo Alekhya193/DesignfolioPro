@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="static/icon.png">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- <h1 style="margin-top: 30px">Fill the details</h1> -->
+      <form action="/upload" method="POST" enctype="multipart/form-data">
+
+
+        <div id="personal">
+          <h1 style="margin-top: 30px">Fill the details</h1>
+          <h3>Personal Details</h3>
+
+        
+         <div class="mb-3">
+          <label for="firstname" class="form-label"
+            >First name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="firstname"
+            name="firstname"
+            placeholder="Enter First Name"  required
+          />
+         </div>
+         <div class="mb-3">
+          <label for="lastname" class="form-label"
+            >Last name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="lastname"
+            name="lastname"
+            placeholder="Enter Last Name"
+          />
+         </div>
+
+         <div class="mb-3">
+          <label for="shortdesc" class="form-label"
+            >Short Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="shortdesc"
+            name="shortdesc"
+            placeholder="Write short description about youself" required
+          />
+         </div>
+
+         <h6 style="margin-top: 20px;">Upload your profile picture</h6>
+          
+         <div class="input-group" style="margin: 20px;">
+            <input type="file" class="form-control" accept="image/*" name="profilepic" id="profilepic" >
+           
+         </div>
+
+         <div class="mb-3">
+          <label for="github" class="form-label"
+            >Github Link</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="github"
+            name="github"
+            placeholder="Enter your github link"  required
+          />
+         </div>
+
+         <div class="mb-3">
+          <label for="linkedin" class="form-label"
+            >Linkedin Link</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="linkedin"
+            name="linkedin"
+            placeholder="Enter your linkedin link "  required
+          />
+         </div>
+
+         <button class="btn btn-primary" onclick="tostep2();">Next</button>
+
+        </div>
+
+
+
+        <div id="education" style="display:none;">
+          <h3>Education Details</h3>
+          <div class="mb-3">
+            <label for="schoolname" class="form-label"
+              >School name</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="schoolname"
+              name="schoolname"
+              placeholder="Enter School Name" required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="collegename" class="form-label"
+              >College name</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="collegename"
+              name="collegename"
+              placeholder="Enter College Name" 
+            />
+          </div>
+          <button class="btn btn-primary" onclick="tobackstep1();">Back</button>
+          <button class="btn btn-primary" onclick="tostep3();">Next</button>
+
+        </div>
+
+
+        <div id="contact" style="display:none;">
+          <h3>Contact Details</h3>
+          <div class="mb-3">
+            <label for="phoneno"  class="form-label"
+              >Phone number</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="phoneno"
+              name="phoneno"
+              placeholder="Enter Phone Name" required
+            />
+          </div>
+  
+          <div class="mb-3">
+            <label for="email" class="form-label"
+              >Email address</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Enter your email address" 
+            />
+          </div>
+          <button class="btn btn-primary" onclick="tobackstep2();">Back</button>
+          <button class="btn btn-primary" onclick="tostep4();">Next</button>
+        </div>
+        
+
+
+        <div id="about" style="display:none;">
+          <h3>About Details</h3>
+          <div class="mb-3">
+            <h6>Write about yourself</h6>
+            <textarea
+              name="about"
+              class="form-label"
+              id="about"
+              cols="50"
+              rows="10" required
+            ></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="project1"  class="form-label"
+              >Enter your first project name, short description and Link</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="project11"
+              name="project11"
+              placeholder="project name" 
+            />
+            <input
+              type="text"
+              class="form-control"
+              id="project12"
+              name="project12"
+              placeholder="short description" 
+            />
+            <input
+              type="text"
+              class="form-control"
+              id="project13"
+              name="project13"
+              placeholder="Link" 
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="project2"  class="form-label"
+              >Enter your second project name, short description and Link</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="project21"
+              name="project21"
+              placeholder="project name" 
+            />
+            <input
+              type="text"
+              class="form-control"
+              id="project22"
+              name="project22"
+              placeholder="short description" 
+            />
+            <input
+              type="text"
+              class="form-control"
+              id="project23"
+              name="project23"
+              placeholder="Link" 
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="project3"  class="form-label"
+              >Enter your third project name, short description and Link</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="project31"
+              name="project31"
+              placeholder="project name" 
+            />
+            <input
+              type="text"
+              class="form-control"
+              id="project32"
+              name="project32"
+              placeholder="short description" 
+            />
+            <input
+              type="text"
+              class="form-control"
+              id="project33"
+              name="project33"
+              placeholder="Link" 
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="project4"  class="form-label"
+              >Enter your fourth project name, short description and Link</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="project41"
+              name="project41"
+              placeholder="project name" 
+            />
+            <input
+              type="text"
+              class="form-control"
+              id="project42"
+              name="project42"
+              placeholder="short description" 
+            />
+            <input
+              type="text"
+              class="form-control"
+              id="project43"
+              name="project43"
+              placeholder="Link" 
+            />
+          </div>
+  
+          <div class="mb-3">
+            <label for="skill1"  class="form-label"
+              >Enter your first skill</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="skill1"
+              name="skill1"
+              placeholder="web dev" 
+            />
+          </div>
+  
+          <div class="mb-3">
+              <label for="skill2" class="form-label"
+                >Enter your second skill</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="skill2"
+                name="skill2"
+                placeholder="web dev" 
+              />
+            </div>
+  
+            <div class="mb-3">
+              <label for="skill3" class="form-label"
+                >Enter your third skill</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="skill3"
+                name="skill3"
+                placeholder="web dev"
+              />
+            </div>
+  
+            <div class="mb-3">
+              <label for="skill4" class="form-label"
+                >Enter your fourth skill</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="skill4"
+                name="skill4"
+                placeholder="web dev"
+              />
+            </div>
+  
+            <div class="mb-3">
+              <label for="skill5" class="form-label"
+                >Enter your fifth skill</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="skill5"
+                name="skill5"
+                placeholder="web dev"
+              />
+            </div>
+            <button class="btn btn-primary" onclick="tobackstep3();">Back</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        
+
+        
+          
+          <br>
+
+        
+      </form>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous">
+    </script>
+
+    <script>
+      function tostep2(){
+        document.getElementById("personal").style.display= "none";
+        document.getElementById("education").style.display="block";
+      }
+      function tostep3(){
+        document.getElementById("education").style.display= "none";
+        document.getElementById("contact").style.display="block";
+      }
+      function tostep4(){
+        document.getElementById("contact").style.display= "none";
+        document.getElementById("about").style.display="block";
+      }
+      function tobackstep1(){
+        document.getElementById("education").style.display= "none";
+        document.getElementById("personal").style.display="block";
+      }
+      function tobackstep2(){
+        document.getElementById("education").style.display= "block";
+        document.getElementById("contact").style.display="none";
+      }
+      function tobackstep3(){
+        document.getElementById("contact").style.display= "block";
+        document.getElementById("about").style.display="none";
+      }
+    </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
